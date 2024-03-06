@@ -12,7 +12,9 @@ int main(int argc, char *argv[])
     BinarySearchTree<char,int> bt;
     bt.insert(std::make_pair('a',1));
     bt.insert(std::make_pair('b',2));
-    
+    bt.insert(std::make_pair('c',3));
+    bt.insert(std::make_pair('d',4));
+    bt.print();
     cout << "Binary Search Tree contents:" << endl;
     for(BinarySearchTree<char,int>::iterator it = bt.begin(); it != bt.end(); ++it) {
         cout << it->first << " " << it->second << endl;
@@ -23,8 +25,15 @@ int main(int argc, char *argv[])
     else {
         cout << "Did not find b" << endl;
     }
-    cout << "Erasing b" << endl;
-    bt.remove('b');
+    //cout << "Erasing c" << endl;
+    //bt.remove('c');
+    bt.print();
+    cout << "Erasing a" << endl;
+    bt.remove('a');
+    cout << "a Erased" << endl;
+    bt.print();
+    return 0; //testing bst
+
 
     // AVL Tree Tests
     AVLTree<char,int> at;
