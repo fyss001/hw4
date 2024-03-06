@@ -32,16 +32,23 @@ int main(int argc, char *argv[])
     bt.remove('a');
     cout << "a Erased" << endl;
     bt.print();
-    return 0; //testing bst
-
-
+    cout<<"----------"<<endl;
     // AVL Tree Tests
-    AVLTree<char,int> at;
-    at.insert(std::make_pair('a',1));
+    /*AVLTree<char,int> at;
+    at.insert(std::make_pair('c',1));
+    at.print();
     at.insert(std::make_pair('b',2));
-
+    at.print();
+    at.insert(std::make_pair('a',3));
+    at.print();*/
+    AVLTree<int,int> at;
+    at.insert(std::make_pair(1,1));
+    at.print();
+    at.insert(std::make_pair(2,2));
+    at.print();
+    at.remove(1);
     cout << "\nAVLTree contents:" << endl;
-    for(AVLTree<char,int>::iterator it = at.begin(); it != at.end(); ++it) {
+    for(AVLTree<int,int>::iterator it = at.begin(); it != at.end(); ++it) {
         cout << it->first << " " << it->second << endl;
     }
     if(at.find('b') != at.end()) {
@@ -52,6 +59,5 @@ int main(int argc, char *argv[])
     }
     cout << "Erasing b" << endl;
     at.remove('b');
-
     return 0;
 }

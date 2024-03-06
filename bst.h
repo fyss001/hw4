@@ -220,6 +220,7 @@ public:
         bool operator!=(const iterator& rhs) const;
 
         iterator& operator++();
+        
 
     protected:
         friend class BinarySearchTree<Key, Value>;
@@ -656,6 +657,7 @@ void BinarySearchTree<Key, Value>::clearHelper(Node<Key, Value>* pt)
     if(!pt) return;
     clearHelper(pt->getLeft());
     clearHelper(pt->getRight());
+    
     delete pt;
 }
 /**
