@@ -522,6 +522,7 @@ void BinarySearchTree<Key, Value>::remove(const Key& key)
     if(temp->getLeft()==nullptr && temp->getRight()==nullptr){
         if(temp==root_){
             root_=nullptr;
+            delete temp;
             return;
         }
         Node<Key, Value>* p=temp->getParent();
